@@ -1,4 +1,4 @@
-import { stringToHTML } from "../../utils/utils.js";
+import { stringToHTML, fetchCache } from "../../utils/utils.js";
 
 class MyComponent extends HTMLElement {
     constructor() {
@@ -18,13 +18,13 @@ class MyComponent extends HTMLElement {
     }
 
     async fetchTemplate() {
-        return await fetch('components/my-component/my-component.html')
+        return await fetchCache('components/my-component/my-component.html')
             .then(response => response.text())
             .then(data => stringToHTML(data));
     }
 
     async fetchCSS() {
-        const css = await fetch('components/my-component/my-component.css')
+        const css = await fetchCache('components/my-component/my-component.css')
             .then(response => response.text())
             .then(data => document.createTextNode(data));
         const styleElement = document.createElement('style');
