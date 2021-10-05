@@ -15,6 +15,7 @@ class MyComponent extends HTMLElement {
         var styleElement = await this.fetchCSS();
         this.shadowRoot.appendChild(styleElement);
         this.shadowRoot.append(htmlFragment);
+        // console.log("BORRAME");
     }
 
     async fetchTemplate() {
