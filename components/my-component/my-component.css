@@ -1,0 +1,12 @@
+:host {
+  --color: white;
+  --background-color: black;
+  --width: 70vw;
+  --height: 50vh;
+}
+#component {
+  color: var(--color);
+  background-color: var(--background-color);
+  width: var(--width);
+  height: var(--height);
+}
